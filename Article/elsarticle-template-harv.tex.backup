@@ -1,0 +1,623 @@
+%% 
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+%% SP 2008/03/01
+
+% \documentclass[preprint,12pt,authoryear]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times,authoryear]{elsarticle}
+ \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{newtxtext,newtxmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{color, colortbl}
+\usepackage[table]{xcolor}
+\usepackage{amsmath}	% Advanced maths commands
+% \usepackage{amssymb}	% Extra maths symbols
+\usepackage{amsfonts}
+
+% \usepackage[colorlinks=true, citecolor=black, linkcolor=black, urlcolor=black]{hyperref}
+
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{mwe}
+\usepackage{filecontents}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{todonotes}	% todo notes
+\newcommand{\tannote}[1]{\todo[inline, color=orange]{#1}}
+\newcommand\mycorrections[1]{\textcolor{red}{#1}}
+\usepackage{todonotes}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+\newcommand{\mnras}{MNRAS}
+\newcommand{\nat}{Nature}
+\newcommand{\aj}{AJ}
+\newcommand{\apj}{ApJ}
+\newcommand{\apjl}{ApJL}
+\newcommand{\aap}{A\&A}
+\newcommand{\apjs}{ApJS}
+\newcommand{\araa}{ARA\&A}
+\newcommand{\prd}{Physical Review D}
+% \journal{Nuclear Physics B}
+\journal{Journal of \LaTeX\ Templates}
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+ %% +44 7496 472457
+ 
+\title{Machine Learning in Fuel Consumption II: An Anomaly Detection Approach in Power Generation Plants}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \address[label1]{}
+%% \address[label2]{}
+\author[p1,p1a]{J. Mulongo }  %\corref{cor2}\fnref{fn1,fn3}
+\ead{jecinta.mulongo@aims-cameroon.org }
+\author[p1,p2]{M. Garuti} %\fnref{fn2}
+\ead{marco@aims-cameroon.org }
+% \author[p1,p3]{E.P. Adzri}  %\corref{cor2}\fnref{fn1,fn3}
+% \ead[url]{http://www.elsevier.com}
+\author[p3]{M. Atemkeng}  %\corref{cor2}\fnref{fn1,fn3}
+\ead{m.atemkeng@gmail.com}
+\author[p4,p5]{T. Ansah-Narh}  %\corref{cor2}\fnref{fn1,fn3}
+\ead{t.narh@gaecgh.org}
+
+\author[p1,p6]{G.M. Nguegnang \corref{cor1}} %\fnref{fn1}
+\ead{maxime.nguegnang@aims-cameroon.org}
+
+\cortext[cor1]{Corresponding author}
+% \cortext[cor2]{Principal corresponding author}
+% \fntext[fn1]{This is the specimen author footnote.}
+% \fntext[fn2]{Another author footnote, but a little more longer.}
+% \fntext[fn3]{Yet another author footnote. Indeed, you can have
+% any number of author footnotes.} SPACE AND ATMOSPHERIC
+
+% RESEARCH GROUP
+
+\address[p1]{Mathematical Sciences (AIMS-Cameroon)}
+\address[p1a]{Maseno University }
+
+\address[p4]{Centre for Radio Astronomy \& Astrophysics, Ghana Space Science and Technology Institute, Ghana Atomic Energy Commission, P. O. Box LG 80, Legon - Accra, Ghana}
+
+\address[p5]{Space \& Atmospheric Research Group, Ghana Space Science and Technology Institute, Ghana Atomic Energy Commission, P. O. Box LG 80, Legon - Accra, Ghana}
+%\address[p2]{School of Physics and Astronomy, University of Leeds, Leeds LS2 9JT, United Kingdom}
+
+
+\address[p2]{University of Padova}
+
+%\address[p6]{Department of Physics, University of Ghana, P.O. Box LG 60, Legon - Accra, Ghana}
+%\address[p4]{Department of Computer Science, University of Ghana, P.O. Box LG 163, Legon - Accra, Ghana}
+\address[p3]{Rhodes Centre for Radio Astronomy Techniques \& Technologies(RATT)}
+
+\address[p6]{University of Yaounde 1} 
+% \author[T. Ansah-Narh et al.]{
+% T. Ansah-Narh,$^{1}$\corref{cor1}\fnref{fn1} %\thanks{E-mail: philusnarh@gmail.com (TAN)}
+% F. B. Abdalla,$^{1,2}$
+% and O. M. Smirnov$^{1,3}$
+% %O. M Smirnov$^{2,3}$
+% %and Fourth Author$^{3}$
+% \\
+% % List of institutions
+% $^{1}$Department of Physics and Electronics, Rhodes University, P. O. Box 94, Grahamstown, 6140, South Africa\\
+% $^{2}$ Department of Physics and Astronomy, University College London, London WC1E 6BT, UK\\
+% $^{3}$ SKA South Africa, 3rd Floor, The Park, Park Road, Pinelands, 7405, South Africa
+% }
+
+% \author{}
+% 
+% \address{}
+
+\begin{abstract}
+%% Text of abstract
+In this paper, we show the use of supervised machine learning classification techniques to detect anomalies in the 
+fuel consumed by generator. Data  used is collected from a base station where the generator is the only source of power. 
+The classification techniques used in training data include support vector machines classifier, k-nearest neighbor, 
+logistic regression and multilayer perceptron. The aim of the study is to detect anomalies in the data recorded from the field
+by finding hidden pattern and compare performance of the four classification techniques on the unseen dataset. Evaluation methods 
+used to study performance of the models  includes , K-fold cross validation, train test split, receiver operating characteristic 
+curve, precision recall curve and confusion matrix. Comparative study of classifier is done for model selection.
+Support Vector Machines outperform other classifiers in term of accuracy on the unseen data in the train test split validation.
+Multilayer perceptron had lower accuracy in the train test split method compared to other classifiers but turns out better in 
+anomalies detection and also in the performance evaluation such as k-fold cross validation, area under the curve(AUC) and precision-recall curve. 
+
+% The thermal power plant systems are one of the most complex dynamical systems which must
+% function properly all the time with least amount of costs. More sophisticated monitoring
+% systems with early detection of failures and abnormal behaviour of the power plants are
+% required. The detection of anomalies in historical data using machine learning techniques can
+% lead to system health monitoring. The goal of the research is to build a neural network-based
+% data-driven model that will be used for anomaly detection in selected sections of thermal
+% power plant. Selected sections are Steam Superheaters and Steam Drum. Inputs for neural
+% networks are some of the most important process variables of these sections. All of the inputs
+% are observable from installed monitoring system of thermal power plant, and their anomaly/
+% normal behaviour is recognized by operator’s experiences. The results of applying three
+% different types of neural networks (MLP, recurrent and probabilistic) to solve the problem of
+% anomaly detection confirm that neural network-based data-driven modelling has potential to
+% be integrated in real-time health monitoring system of thermal power plant.
+\end{abstract}
+
+\begin{keyword}
+% %% keywords here, in the form: keyword \sep keyword
+% 
+% %% PACS codes here, in the form: \PACS code \sep code
+% 
+% %% MSC codes here, in the form: \MSC code \sep code
+% %% or \MSC[2008] code \sep code (2000 is the default)
+Anomalies \sep Multilayer  Perceptron \sep K-Nearest Neighbor   \sep Support Vector Machines \sep Machine Learning \sep Classification
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+\section{Introduction} \label{sec:intro}
+%% 
+% \footnote{{\tt http://www.ticra.com/products/software/grasp}}
+%%  face an increasing number of power shortages, affecting the ability of businesses to run base stations, data centers, computers and other IT equipment.
+
+\mycorrections{The expansion of mobile services of the telecom industries has resulted in the installation of cell towers to diverse parts of the world.
+In developing countries like Cameroon, the supply of the power grid is irregular and the network companies find it difficult to manage 
+their base stations particularly, their data  centres and other IT equipments. Due to this, the management of the base stations use diesel generators, solar
+panels, batteries and another secondary source of power as a backup  plan to keep running their systems. However,
+these} other power sources \mycorrections{have also generated other problem, specifically, fuel theft from those who have access
+to fuel distribution in the various base stations and also, from other people in the vicinity.}
+
+\tannote{TeleInfra in Cameroon is a subcontracting company of IHS Company [REPHRASE THIS ....]} whose objective is to provide management service such as 
+site maintenance  and refueling of generators in \mycorrections{the} base stations. Like any other power dependence company in Africa, 
+\mycorrections{the company faces} the problem of electricity shortages and hence, choose\mycorrections{s} to have a generator as a main back up plan.
+ \mycorrections{The main goal of this paper is to use machine learning (ML) techniques to evaluate the fuel consumed by generator power plants in the 
+TeleInfra\footnote{{\tt http://www.art.cm/en/node/3111}} company in order to observe some outliers produced by the system.
+ The dataset used in this paper, is obtained from each base station in TeleInfra. 
+ It contains attributes of fuel consumed by the generators and other informations such as maintenance details.}
+
+Anomaly in \mycorrections{a} data  \mycorrections{is} considered as  \mycorrections{an} observation which do not conform to the expected standard in the data. 
+\mycorrections{Meanwhile, recent works in anomaly detection such as fraud detection analysis~\citep{2017arXiv170601953Z, chouiekh2018convnets}, 
+thermal power plant~\citep{banjanovic2017neural}, medical image analysis~\citep{taboada2009anomaly}, etc., have shown how well ML techniques can be used to
+address these challenges.}
+% \indent 
+
+From the various anomalies detection research, \mycorrections{the} algorithms \mycorrections{used can outperform each other based on the type of data 
+and the underlying assumptions employed.}  Most \mycorrections{of the} competitive \mycorrections{ML} techniques \mycorrections{used} in classification task
+\mycorrections{like in our case}, consist of support vector machines (SVM), k-nearest neighbor (KNN), logistic regression (LR)
+and multilayer perceptron (MLP). In this study, we do a comparative analysis on the performance of these classifiers to determine the best
+classifier that can accurately detect the anomalies in the fuel consumption dataset. SVM
+aims in generating an optimal hyperplane that maximizes the margin between two class, that is, binary classification 
+whereas KNN  learns from the training data and predict the test instance based on the votes from the nearest neighbor. 
+LR uses probabilities to predict the chance of a sample to belong in  a certain class. MLP learns the complexity of data and optimize the weights to minimize classification error.
+\mycorrections{A more detailed explanation of these classifiers is given is Section~\ref{sec:med}.}
+ 
+The rest of this paper is organized as follows: Section \ref{sec:expl} describe the dataset,feature selection and descriptive findings 
+from the data. Section  \ref{sec:med} we describe machine learning methods used in the study. Section \ref{sec:resu} we conclude 
+the results and finding from the study discussed with comparative analysis performance of the methods used.
+
+ 
+ 
+%  
+%  
+%  
+%  
+% \mycorrections{Telecom industries in a developing country like Cameroun, mostly use generator power plants to manage their businesses (such as; 
+% computer clusters, base stations, data centres, etc.) because of the unstable electricity power supply for any given day. It is expected that  everyday the generators 
+% will work very well with less fuel consumption. However, this is not always so, since the continuous use of the plants can cause anomalies such as wrong reading by the sensors
+% and possibly some parts of the system being worn out. It is therefore, very important to understand and detect these anomalies which is exactly what this study seeks to do.}
+% Anomalies in a dataset are \mycorrections{outliers} that deviate \mycorrections{significantly} from what is considered as a normal trend.\\
+% % \indent  \tannote{Describe briefly what TeleInfra does ...}
+% 
+% \mycorrections{The rest of this paper is organized as follows. Section \ref{sec:expl} describes the dataset and the feature parameters used in the study. 
+% % state-of-the-art for current anomaly detection methods in industry plants. 
+% Section 3 presents the ML methods used for the anomaly detection.
+% We then discuss our results in Section  and finally, present the conclusion of the paper in Section 5.}
+% 
+
+% experimental results
+% are presented to demonstrate the effectiveness of the proposed approach in selected sections of thermal power plant. Finally, Section 6 concludes the paper.
+
+\section{EXPLORATORY DATA ANALYSIS}  \label{sec:expl}
+
+\subsection{Dataset} \label{sec:desc}
+
+The dataset is collected from the base station powered mainly by the generator. 
+It has 32 features both numerical and categorical data. The numerical variables used  to fit the models are  standardized to make sure all the features 
+have the same treatment. \tannote{The data is a recorded on how the generator consumed fuel in a specific period of data. These information include 
+the total working hours of the generators in a specific period of time, the rate at which the generator consumes 
+fuel per hour, the total fuel consumed per between certain period in time, previous measure of fuel left in the generator, 
+quantity added to the generator and  total quantity left in the  generator.} 
+
+The dataset \mycorrections{have a sample size of} 2676 of the fuel consumed within a period of six month\mycorrections{s}, with $36.66$ \%  of the sample labeled \mycorrections{as}
+anomaly class and \mycorrections{the rest}  as a normal class. The important features used to fit the models \mycorrections{are} selected using \mycorrections{the} 
+Gradient Boosting classifier to reduce the number of features that do not impact the model performance. From Gradient Boosting classifier feature selection technique,
+key variables consider important include;  the daily running time of the generator, the total number of hours generator  worked in a period of time, 
+daily fuel consumed per  and the total fuel consumed per period. Figure  \ref{fig:feature} shows feature importance using Gradient Boosting classifier.
+
+\tannote{1. Give a brief description to Fig.1\\
+	 2. Explain what GB classifier is about and why you chose that over other classifiers like the RF classifers.}
+	  
+
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=0.9\linewidth]{feature}
+	\caption{}
+	\label{fig:feature}
+\end{figure}
+
+Class imbalance affects most classification algorithms \cite{awoyemi2017credit}. Majority class can overtake the algorithm making 
+it predict only one class with high accuracy. \cite{brownlee2016master} Class imbalance is corrected by either under-sampling of legit class, 
+that is, reducing the size of the legit observations into the same size as the fraudulent class or oversampling of the fraudulent class by making 
+a duplicate observations of the anomaly class to level both classes into the same sample size.
+Data labeling was done based on the anomalies found in the dataset. Supervised anomaly detection were applied using classification techniques and 
+therefore, the data point in the dataset were labeled as whether anomaly or normal. 
+
+% \newpage
+\subsection{Descriptive Analysis}
+Gaussian distribution of fuel consumed figure \ref{fig:normalcurve} shows the probability  frequency distribution of the random variables. The fuel consumed by generator has asymmetry normal distribution  with mean 291.11 and standard deviation of 181.54. Large variance is as a result of dispersion of  and the skewness of the random variables. Classifier assumes the underlying distribution of the dataset hence the distribution has great impact in the performance of classifiers \cite{japkowicz2011evaluating}. 
+Figure \ref{fig:normalcurve} is the kernel density estimation and Normal probability plot for the fuel consumed. 
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=1.2\linewidth]{normalcurve}
+	\caption{Kernel density estimation and Gaussian distribution of fuel consumed}
+	\label{fig:normalcurve}
+\end{figure}\\
+From the work done by \cite{maxime2018} on fuel prediction  on the same dataset with outliers put into consideration, the mean fuel consumed within the period of six month is 312 litters with a standard deviation of 168.729. The mean improvement is as result of the zero consumption not taken into consideration.
+The fuel consumed is  positively skewed with a skew of  0.46. From figure \ref{fig:normalcurve} the Gaussian distribution plot show that the dataset has outliers as a result of this the normal distribution curve  deviating from the mean. From figure \ref{fig:normalcurve} zero consumption of fuel consumed entries in the dataset causes the normal curve to start above the normal line. Due to  this, the zero consumption samples were compared with the difference between what was left in the generator  previously visit and what was found in the generator to make sure that consumption was actually zero fuel. As a result of the outliers, the fuel consumed is shifted to the left, this contribute to the skew distribution of the fuel consumed. 
+\newpage
+Figure \ref{fig:cor} displays a correlation matrix between numerical variables in the dataset. Correlation is a normalized covariance with its values ranges from -1 to 1. The matrix measures a linear relationship between variables with negative one indicates two variables have strong  negative relationship, that is, as one variable increases the other one decreases  and positive one indicates  strong positive relation, that is,an increase  in one variable  results to increase in the other one. The diagonal values indicates the correlation of a variable with itself.
+ 
+ From figure \ref{fig:cor} fuel consumed have strong positive relation  of 0.81 with the number of hours the generator. The quantity of fuel added have less impact on the fuel consumed. The rate at which the generator consume fuel less positive relation of 0.31 with the consumption. The classification class have negative correction of -0.02  with fuel consumed. Shortcoming of correlation matrix is that, in the case where variables have a non-liner relationship the matrix might not detect. 
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=1\linewidth]{COR}
+	\caption{}
+	\label{fig:cor}
+\end{figure}
+\newpage 
+The anomalies detected in the data include  hours the generator was working in one day, consumption exceeds what fuel generator can consume in one day and the case where generators consumes fuel and running time  is zero. The anomalies discovered in the dataset were used to generates a classification class of the samples as either normal or anomaly consumption. 
+
+The graph below shows a plot of number hours generator was working in one day. From the graph, recorded data indicates anomalies of working hours was more than twenty hours in one day.\\
+
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=0.7\linewidth]{RR}
+	\caption{Graph of number of hours the generator function in one day. }
+	\label{fig:rr}
+\end{figure}
+From figure	\ref{fig:rr}, the running hours of most of the generator per day fluctuates around 18 to 25 hours in a day. An observation can be detect as an outliers by considering the patter ot the dataset.
+
+\section{METHODOLOGY} \label{sec:med}
+\subsection{Support Vector Machines}\label{SVM}
+Support Vector Classifier is a classification algorithm used to separate two or more class by having a hyperplane which maximizes the margin between classes.
+
+\cite{friedman2001elements} In the case of two separable class, a decision boundary separates  two class  with the widest margin. When the two class are linearly separable, then in that case the ideal hyperplane is the one with the widest margin between the boundary of two class. 
+
+Given a paired of learning examples of $m$ number of features and corresponding class,
+\begin{equation}\label{eqn3}
+\left\lbrace   x_{i},d_{i}\right\rbrace , i = 1 \cdots N
+\end{equation}
+where $x_{i}$ are input examples and $d_{i}$ the classification class. The classifier find a function that correctly maps each input variable $x_{i}$ to its corresponding class $ d_{i} \in \{ -1, 1\}$. 
+\begin{equation}\label{eqn4}
+f(x) = W^{T}X + b = 0
+\end{equation}
+W is the weight vector and b the bias. Equation \ref{eqn4} is a decision boundary determining the class of the input variable. The support vectors, that is, the samples on the boundary of the margin determines the decision boundaries. If the function of equation \ref{eqn4} is greater than zero then the input variable belong to class 1 otherwise it belongs to class 0. \cite{friedman2001elements}  To get  an ideal hyperplane between the two class is as same as minimizing the norm of the weight vector. 
+For two-class classification, the input variable is either on the positive or negative side of the decision variable, such that, 
+\begin{equation}
+d_{i}(w^{T}x_{i} + b)\geq 1, \forall (x_{i},d_{i}) \quad , d_{i} \in \{ -1,1\}
+\end{equation}
+
+\cite{kelleher2015fundamentals} The margin can be maximized by minimizing the weight vector W. In case of non-separable, penalizing term is introduced to allow misclassification. The slack variable introduced in the case of non-separability measures how far the data deviate from the correct class.
+\begin{equation}
+d_{i}(w^{T}x_{i} + b)\geq 1 - \xi_{i},  \quad i = 1 \cdots N, \quad 0 \leq \xi_{i} \leq 1
+\end{equation}
+ When a sample is  correctly classified then the slack variable corresponding to that input value is equal to zero. For a non linear dataset, the kernel functions  transforms the two class.A non linear kernel function allows define a hyperplane that clearly separate the classes.  Commonly used non-linear function includes the hyperbolic tangent, polynomial and radial basic kernel.
+
+\cite{aggarwal2014data} The cost (C) function and gamma have a great influence on the model in terms of accuracy. For larger value of C, lowers the misclassification rate, that is, the model ensures all the train data set strictly classified to the correct class but this can lead to overfitting of the model. For a lower  value of C, allows misclassification of dataset although this can led to underfitting of algorithm. The gamma parameter explains how a single sample  influence on the model, low gamma means a single sample has low influence in the model.
+
+\subsection{Multilayer Perceptron}\label{MLP}
+
+Multilayer perceptron is a supervised machine learning neural network. Multilayer perceptron consists of input layer, hidden layers, activation function and output layer. The input layer receives the variables $X =\{ x_{0}, x_{1},\cdots x_{n}\}$ and assigned to weight vector $ w = \{ w_{0}, w_{1}, \cdots w_{n}\}$.
+ \cite{aggarwal2014data} multilayer perceptron is a forward feed, that is,  weighted input variables  move from the input layer to the inner hidden layer. The hidden layers enhance the model capabilities by allowing the network to learn complex  problem and give result in the output layer. A nonlinear activation function applied to the weighted linear summation of the input variables to extract a relationship between the output and input variable.
+\begin{eqnarray}
+z  &=& \sum_{i=1}^{m} w_{ji}x_{i}\\
+y &= & \phi(z)
+\end{eqnarray}
+ $w_{ji}$ is the synaptic weight connecting neurons between the layers.  
+ The weights vector is unknown , therefore, weights in the input layer are randomly selected based on the feature importance of the input variables. Hidden layers allow the model to learn non linear function, as result, low weight value at the input layer allows the model to start as linear and due to increase hidden layers,  the model turns  nonlinear with increase  weights.
+ 
+ \cite{haykin2004comprehensive} Commonly used nonlinear function is the sigmoid function. The weights adjustment is with respect to the error, that is, computed at each neuron to make sure error minimization. As a result of these connections, each node is penalized as every node contributes to the global error computed at the output layer. The aim is to minimize the error, therefore the error correction with respect to the weights. 
+\begin{equation}\label{enq7}
+\Delta w_{ji}^{t} =- \eta\frac{\partial \varepsilon(n)}{\partial w_{ji}}.
+\end{equation}
+Where $\eta$ is the learning rate of the mode. Learning rate regulates the change of the adjusted weight in the direction of weight that make sure the error is minimized, as a results of weight adjustment from question \ref{enq7} the new weight in the corresponding layer became;
+\begin{equation}
+ w_{kj}^{t +1} =w_{ji}^{t}- \eta\frac{\partial \varepsilon(n)}{\partial w_{ji}}.
+\end{equation}
+   At an output node, total error is  difference between true value and the observed value. Since all the hidden layers connection contributes to the final error generated at the output node, then the error contributed from each node is also derived  by taking partial derivative of the error with respect to the weight connecting the node.
+\subsection{K- Nearest Neighbor}
+K-nearest neighbor is a learning algorithm that depends on the knowledge gained from the training data to predict the test data. The algorithm does not make any assumptions about the data and therefore the prediction depends on the k neighboring term. The k term can be one or more, hence the majority class in the k neighbor is average to produce an output class. The new instance in  the k nearest neighbor is compared with  the training samples, checks the nearest neighbors  and predict based on the majority class . Given a new data point $x_{j}$ the classifier checks k neighbors on the training samples and return the output based on the majority class in the k neighbor.
+
+
+ A small value of k can result in high accuracy but also pose a threat of overfitting the model. The large value of k causes under fitted model. To predict the class of test data point, Euclidean or Manhattan distance is apply in the case of the continuous variable. Euclidean distance is measure by taking the difference between features in the data point.
+ \begin{equation}
+ D_{i} = || x_{j} - x_{0} ||
+ \end{equation}
+To predict a new data point, the classifier compares  each training set with new observation hence classifier suffer high computation cost as a result of comparing each point in the train set with test data. 
+\subsection{Logistic Regression}
+Logistic regression is a probabilistic statistical model. Given an input variable the model predicts both the class and probabilities of a sample being in that class. Suppose given an input variable X such that , $X = (x_{0} , x_{1},\cdots x_{n})$, non-linear sigmoid function is applied to give the relationship between input  and  output variables $Y_{i}, \forall i = 1,\cdots,P $. Where P represent number of class. 
+
+In the case, we will consider a binary classification such that, Y $ \in \{ 0,1\}$ with a probability of being in either class 1 or 0 being;
+\begin{equation}
+p(Y=1 | X) = \frac{1}{ 1 + e^{-z}}
+\end{equation}
+\begin{equation}
+p(Y=0|X) = \frac{e^{-z}}{1 + e^{-z}} ,\quad z = w_{0} + \sum_{i = 1}^{n} W^{T}X
+\end{equation}
+The aim of logistic regression is to optimize the weights  parameters  such that the classification error is minimal. \cite{bonaccorso2017machine}  parameters are estimated by either gradient ascent or stochastic gradient ascent method.
+
+The log-likelihood  and Newton methods  \cite{qi1993nonsmooth} are commonly applied to find optimal parameters. In both gradient ascent or stochastic gradient ascent method, parameters are adjusted until the model has a minimum error between the observed value and the predicted. Stochastic gradient ascent updates its weight at every single point depending on the direction of the weight.
+
+The gradient ascent  differs from the stochastic gradient ascent method in the sense that weights are adjusted at every level of the input variable and the gradient ascent considers  input dataset in batches at each step, that is, to optimize the parameters using gradient ascent the problem is solved by  taking the partial derivate of log likelihood  function with respect to parameters. 
+ The hyperparameters in logistic regression are adjusted to avoid overfitting. This includes norm $(L_{1} or L_{2})$  which are used during penalization to ensure the weights are small. The cost function  C regularizes the misclassification cases.   
+
+\subsection{Cross Validation}
+Cross-validation is a technique used to check how the model will perform in general. The dataset was split with $80\% $ for training set and $20\%$ test set. The testing sample  validates the performance in confusion matrix and the generalized score of the model. K-fold cross-validation with 5 fold was also tested. The data are split into K folds, that is, 5 folds.Four folds  trains  the data and the firth fold is used for testing, this process is repeated until all the folds are trained and tested. The empirical risk of a classifier is obtained by taking the average of all error in the test fold. 
+
+ To ensure that the classifier is performing well in both class, we also consider the Mathew Correlation Coefficient(MCC). MCC value range from -1 to 1, -1 indicates the poor performance and 1 indicates the best performance. Table \ref{tab2} shows the he results of MCC, accuracy score, recall, precision, and F-measure.
+
+ Due to the imbalanced nature of the normal and anomaly class, ROC (Receiver Operating Characteristic ) curves were used to measure how classifier is doing in each class. As we saw earlier, the data is skewed and therefore class distribution might affect  classifier performance. AUC visualize the classifier behavior on how often the model will positive class correctly and when the actual classification is negative how often the model predicts positive. We want to maximize the true positive rate and minimize the false positive rate. The curve has TPR on the y-axis and FPR on the x-axis. The plot range from  0 - 1 with position (0,1) indicates a perfect classification model. 
+
+From \cite{japkowicz2011evaluating}, ROC curve have a better visualization of models performance and comparative analysis of classifiers. \cite{davis2006relationship} considered precision-recall curves to be more appropriate in to study the behavior of the classifier. Precision and recall of a classifier given by  equation  \ref{eqn12} and \ref{eqn11}. Precision-recall curve gives a clear relation of a true positive classified sampled and false positive classified sampled. \cite{davis2006relationship} demonstrate the relationship between precision-recall and ROC curve and shows that there exist one-to-one relation between the two curve. If the curve of classifier have high area under the curve in the precision-recall curve then then curve must also prevail ROC curve.
+
+The classifiers  are trained  on the same dataset and the performance is evaluated using the test dataset. The confusion matrix is a  matrix that shows the classifier ability to predict the test data. Below is a representation of Confusion matrix used to decide the different performance of classifiers. 
+\begin{center}\label{con}
+	
+	\begin{tabular}{l|l|c|c|c}
+		
+		\multicolumn{2}{c}{}&\multicolumn{2}{c}{Predicted Class}&\\
+		\cline{3-4}
+		\multicolumn{2}{c|}{}&Positive&Negative&\multicolumn{1}{c}{}\\
+		\cline{2-4}
+		\multirow{2}{*}{Actual Class}& Positive & True Positive(TP) &False Positive (FP) & \\
+		\cline{2-4}
+		& Negative & False Negative(FN) & True Negative (TN) & \\
+		\cline{2-4}
+		 
+	\end{tabular}
+	\captionsetup{type=table} 
+	\caption{Confusion Matrix }
+	\label{tab}
+\end{center}
+
+From table \ref{tab}, the following information about the classifier's performances can be obtained. TP is when the model predicts positive when  it's actually positive and on the other hand FP is when the model predict a negative class as positive. TN occurs when the model predicts a negative class when the class is actually negative and FN is when its positive class. The general performance of the model, that is, the ratio of correct prediction and the total sample gives the accuracy of the model. It is a measure that  is affected by skew nature of the class distribution as it's computation involves output from both class. From the confusion matrix, the True Positive Rate(TPR) is obtained by diving the true positive predicted by the total number of positive in the sample. The False positive rate derived from the division of false positive and total number of negative in the sample. Recall or sensitivity is   ratio of true positive and all positive in the sample. Its show how sensitive is the classifier to detect the normal class from all label of the normal class. Precision compares the true positive in the confusion matrix and the total number the classifier predicted as positive. Specificity also known as true negative rate of the classifier is  the ratio of true negative and negatives sample. F-measure the Harmonic mean of recall and precision. Equation \ref{q1} to \ref{q19} gives the  formulas of the  computation generated from the confusion matrix 
+
+\begin{equation}\label{q1}
+Accuracy = \frac{TP +TN}{TP +FP +TN+FN} 
+\end{equation}
+\begin{equation}\label{eqn11}
+Recall(Sensitivity) = \frac{TP }{TP +FN} 
+\end{equation}
+\begin{equation}\label{eqn12}
+Precision = \frac{TP}{TP +FP}
+\end{equation}
+\begin{equation}
+F-measure = 2\frac{Precision*Recall}{Precision +Recall}
+\end{equation}
+\begin{equation}
+Specificity(TNR) = \frac{TN}{TN +FP}
+\end{equation}
+\begin{equation}
+MCC = \frac{TP\cdot TN -FP\cdot FN}{\sqrt{(TP +FP)\cdot (TP +FN) +(TN +FP)\cdot (TN +FN)} } 
+\end{equation}
+\begin{equation}
+TPR = \frac{TP }{TP +FN}
+\end{equation}
+\begin{equation}\label{q19}
+FPR = \frac{FP}{FP +TN}
+\end{equation}
+For ease of
+comparison, models from all techniques in our study were developed
+using the same derived attributes.
+
+
+\section{RESULTS \& ANALYSIS} \label{sec:resu}
+In this study, classification techniques were fitted with a  real life data with $80\%$ as training  sample and $20\%$ for testing. To conduct comparison of the fitted models, the models were fitted with the same features. We compared the performance of the classification methods used on the test data term of accuracy, graphical evaluation techniques such as ROC and precision-recall curve we used to evaluate the performance of the classification techniques. Anomalies detection was also studied,that is,  to identify which algorithm detected that best detect anomalies. Support vector machine, k-nearest neighbor and multilayer perceptron shows an impressive result in identifying the anomalies in the data.  The  summary of classifiers performance on the test dataset are shown in  Table \ref{tab2}. 
+\begin{center}\label{kk}
+	\begin{tabular}{ |p{3.6cm}|p{1.3cm}|p{1.7cm}|p{1.7cm}|p{1.3cm}| p{1.1cm}|} 
+
+		\hline
+		\multicolumn{6}{c}{\cellcolor{gray!50}Classification performance } \\
+		\hline
+		\hline
+		\cline{1-6}
+	
+		&Accuracy &K-fold score&F1-Measure & MCC & Precision \\
+		Classifier & && & & \\
+		\cline{1-6}
+		Logistic Regression &0.6269&0.655 & 0.0909&  	0.1383 &0.9936\\
+		\hline
+		Support Vector Machines&   0.9421  &0.770& 0.9253&	0.8781 &0.9543\\
+		\hline
+		K-Nearest Neighbor&0.9067 &	0.935 &0.8792 &	0.8033&0.9268\\
+		\hline
+		Multilayer Perceptrons & 0.9049& 0.954	&0.8908 &	0.8235&0.8451 \\
+		\hline
+\end{tabular}
+\captionsetup{type=table} 
+\caption{Classifier evaluation performance }
+\label{tab2}
+\end{center}
+
+Support vector machine fitted with radial basis function (RBF) had a general score of $94\%$ on the test data.  Although, the support vector machine had higher accuracy compared on the test, multilayer perceptron as seen from figure \ref{fig:rocall}  outperformed support vector. From result obtained in the 5-fold cross validation, support vector machine had an general score of $77\%$. ROC and precision-recall curve of support vector machine from figure \ref{fig:rocall} has an AUC of $0.96$ and $ 0.97\%$ in precision-recall curve and ROC curve respectively. \\
+
+
+
+Below is a confusion matrix results of the classifiers on test data of $536$ sample points.
+\begin{center}
+	\begin{tabular}{ |p{2.8cm}|p{3.4cm}|p{3.1cm}|p{2.8cm}|p{2.8cm}|} 
+		\hline
+		\hline
+		\multicolumn{5}{c}{\cellcolor{gray!50}Confusion Matrix Table} \\
+		\hline
+		\hline
+		\cline{1-5}
+		
+		&Support Vector Machine&Multilayer Perceptron&K-Nearest Neighbor & Logistic Regression \\
+		 & && & \\
+		  & && & \\
+		\cline{1-5}
+		True Positiv(TR) &313&277&304 &326   \\
+		\hline
+		False Positive(FP)&  15   &51&24 &2	\\
+		\hline
+		True Negative(TN)&192&208	&182&10	\\
+		\hline
+		False Negative (FN) &16 & 0&26&198	\\
+		\hline
+	\end{tabular}
+	\captionsetup{type=table} 
+	\caption{Classifier confusion matrix }
+	\label{tab4}
+\end{center}
+
+	Multilayer perceptron fitted with relu activation shows a better performance compared to other classifiers. The input variable used to fit the model were all  standardized to ensure the feature are equally treated in the regularization. From the  K- fold cross validation with five fold, the classifier had a score of $95.41\%$. From table \ref{tab4} the classifier identified all the anomalies in the test data with a recall of $ 100\%$ and precision of $ 85\%$. High recall from the classifier is as a result of  zero misclassification of negative class. As shown from figure \ref{fig:rocall} the classier had an AUC of 0.99 and 0.98 for ROC and precision-recall curves respectively. Precision-recall curve  of multilayer perceptron dominate with a score closed to perfect performances as compared to other classifiers.  
+	K-nearest neighbor fitted with k equals to one had a general score of $91\%$. For the case of anomalies detection, k nearest neighbor performed better as compared to logistic regression. From the cross validation score, the k-nearest has a score of $93.46\%$, which outperformed support vector  machines with high accuracy in the train test split validation. From figure \ref{fig:rocall} k-nearest neighbor had an AUC of 0.9 which still surpass the logistic regression. 
+Logistic regression fitted with parameter  C = 0.001 and L2 norm, the classifier had a general performance of $63\%$. The cross validation score with five fold of the logistic regression was $65.54\%$. 
+
+ From table \ref{tab4}, the classifier identified normal class with a precision of $99.36\%$ which is slightly better as compared to multilayer perceptron, and recall of logistic regression indicates  $48\% $. From figure \ref{fig:rocall}  AUC of ROC curve in logistic regression is close to the random guess with an AUC of $57\%$. In this case, the classifier will randomly classifier a sample, hence low predictive performance. Logistic regression had low predictive power in identifying the anomaly class. \\
+ 
+Table \ref{matrictable} below shows the basic computation of the confusion matrix 
+\begin{center}
+	\begin{tabular}{ |p{2.8cm}|p{3.6cm}|p{2.8cm}|p{3.2cm}|p{2.8cm}|} 
+		\hline
+		\multicolumn{5}{c}{\cellcolor{gray!50}Classifiers } \\
+		\cline{1-5}
+		&Support Vector Machines&K-Nearest Neighbor&	Multilayer Perceptrons &Logistic Regression  \\
+		Metrics& & & & \\
+		\cline{1-5}
+		True Positive Rate&0.9514&0.9212 &1.0000 &0.9939\\
+		\hline
+		False Positive  Rate& 0.0725  &0.1165&0.1969 &0.1667\\
+		\hline
+		True Negative Rate&0.9275 &	0.8834&0.8031 &0.8333\\
+		\hline
+		False Negative Rate & 0.0486& 	0.0788&0.0000 &0.3779\\
+		\hline		
+\end{tabular}
+\captionsetup{type=table} 
+\caption{TPR,FPR,TNR,FNR evaluation of the classifiers}
+\label{matrictable}
+	
+\end{center}
+
+Across all validation tests, the logistic regression was under performing. In the study, accuracy techniques were used to determine the performance. Comparing the performance of the models support vector classier has best accuracy score of $94\%$ on test data.
+Multilayer perceptron K-Nearest Neighbor and Logistic regression had an accuracy score of $90\%$,$91\%$ and $63\%$ respectively. Multilayer perceptron showed high performance in other classification techniques apart from train test split. From figure \ref{fig:rocall}, ROC and precision-recall curve of multilayer perceptron is leading support vector machine despite it has high-performance in the train test split. 
+
+Figure \ref{fig:rocall} shows the precision-recall and ROC curves representation of the classifiers used in this study. Precision-recall curve evaluate the number of positives that the model predicted. The curve at the right corner of the precision-recall curve is consider to have more true positive predicted by the model as compared to false negative. Precision-recall curve focus on how much positive have been predicted correctly given  the total positive predicted.  
+Multilayer perceptron area under the curve in both graph \ref{fig:rocall} dominate. The logistic regression in the precision-recall curve have a drastic change, this is explained  by the change of positive and negative sample in the table \ref{tab4} .
+
+ The graphs below show the graphical evaluation measure of the classifiers using precision-recall  and ROC curves.  
+\begin{figure}[tbph]
+	\centering
+	\includegraphics[width=1.2\linewidth]{ROCall}
+	\caption{\textit{Precision-Recall curves and ROC curves of classifiers} }
+	\label{fig:rocall}
+\end{figure} 
+ \subsection{Bias-Variance analysis}
+ Using cross validation with five split, we observe the relationship between training score and cross validation score of different classifiers. Variation of cross validation curve is as a result of high variance and training score curve variation is as a result of high bias. Bias-variance in the model affect performance of the model. High variance is an indication that the model has generalized the model and learn every noise in the data. High bias indicates that the model has less information. Regularization of bias and variance help the model to attain better predictive performance. In all the models the cross validation curve tend to converge with training score curve although in support vector machine  and k-nearest neighbor the convergences is slow. Slight fluctuation of both cross validation curve and training curve is experience in k-nearest neighbor.  Multilayer perceptron from figure \ref{fig:crossval} convergence faster and therefore  increase in training curve  does not improve its performance. The error generated by models can be as a result of either bias-variance or outliers in the data. In logistic regression, cross validation curve outperform training score curve and both curves converge with an increase in the data examples. 
+ \begin{figure}[tbph]
+ 	\centering
+ 	\includegraphics[width=1.2\linewidth]{crossval}
+ 	\caption{}
+ 	\label{fig:crossval}
+ \end{figure}
+ \newpage
+\section{CONCLUSION}
+In this paper, we aimed at evaluating classification algorithm by training the model to learn and identify the anomalies in the data. Four classification techniques were evaluated namely, support vector machine, logistic regression, multilayer perceptron, and k-nearest neighbor. Support vector machines had best performance generally with an accuracy score on the test data of $94\%$. Although support vector machine outperformed other classifier, using K- fold cross validation technique multilayer perceptron performed best with score of $95.41\%$. From the confusion matrix, multilayer perceptron had a best predicting power of the anomalies. Although logistic regression performed better in precision score as compared to multilayer perceptron, the classifier had the lowest performance as compared to all the classifiers . Logistic regression predicts more of the normal class as compared to anomaly class.
+
+The data is imbalance and as a result some evaluation methods which depend on both class for computation  provides wrong impression due to skew nature of the class.  ROC and Precision-recall curve used to visualize and evaluates classifiers. From figure \ref{fig:rocall}, multilayer perceptron dominates two graph with higher performance on AUC in both curves. 
+For anomalies detection in the dataset, multilayer perceptron had a highest performance and for a general score in terms of accuracy support vector machines is leading. 
+
+Anomalies is our class of interest and the ROC curve take into consideration of the negative class, therefore ROC curve became the most relevant graphical visualization measure for not only the study of classifier behavior but also for model selection through comparative  evaluation of different classifiers. We therefore  conclude multilayer perceptron show an overall better performance compared to other classification techniques in most performance measures, that is ,the classifier  best fit the training examples compared to other classifiers in terms of  anomaly detection and in evaluation performance such as K-fold cross validation, precision-recall and ROC curves.  
+
+
+
+
+\section{SUMMARY}
+We fitted support vector machines, multilayer perceptron, logistic regression and k-nearest neighbor on the dataset of  fuel consumed by generator with two class, anomaly and normal class. Comparative analysis of classifiers performance using K-fold cross validation, train test spit, graphical representation techniques such as ROC and precision-recall curve were used to study the behavior of the classifier. Key indicating factors consider to evaluate the classifiers includes how well the classifier identify anomalies that exist in the test data, accuracy and AUC in ROC graph. From the results of this study, Multilayer perceptron performed well in all metrics evaluated apart from train test split evaluation method. The distribution of the two class were not equal, therefore the classification accuracy is not considered in the model selection. 
+
+\section{Acknowledgement }
+The author would like to thank TeleInfra Company and Group One Holding Company for providing the dataset for this study. We wish to acknowledge Mr. OKALI DIMA Patrick from Group one holding for ensuring the data was available. Grateful for SciKit learn library as this work has been made possible from the use of their library packages.
+\section{References} \label{sec:references}
+ \bibliographystyle{elsarticle-harv} 
+ \bibliography{ref.bib} %{<your bibdatabase>}
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+% \begin{thebibliography}{00}
+% 
+% %% \bibitem[Author(year)]{label}
+% %% Text of bibliographic item
+% 
+% \bibitem[ ()]{}
+% 
+% \end{thebibliography}
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-harv.tex'.
