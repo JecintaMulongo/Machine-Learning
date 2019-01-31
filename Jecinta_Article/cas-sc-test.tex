@@ -1,0 +1,593 @@
+%\documentclass[a4paper,fleqn,longmktitle]{cas-sc}
+%\documentclass[a4paper,fleqn]{cas-sc}
+\documentclass[a4paper,fleqn]{cas-sc}
+%\usepackage{l3regex}
+
+\usepackage{lipsum}
+
+%\usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage[numbers]{natbib}
+
+\xspaceaddexceptions{]}
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+\tsc{EP}
+\tsc{PMS}
+\tsc{BEC}
+\tsc{DE}
+
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+\shorttitle{Leveraging social media news}
+\shortauthors{Rawat et al.}
+%\begin{frontmatter}
+
+\title [mode = title]{This is a specimen $a_b$ title}                      
+\tnotemark[1,2]
+
+%%  \tnoteref{tn1,tn2}
+
+\tnotetext[1]{This document is the results of the research
+   project funded by the National Science Foundation.}
+
+\tnotetext[2]{The second title footnote which is a longer text matter
+   to fill through the whole text width and overflow into
+   another line in the footnotes area of the first page.}
+
+
+
+\author[1,3]{CV Radhakrishnan}[type=editor,
+                        auid=000,bioid=1,
+                        prefix=Sir,
+                        role=Researcher,
+                        orcid=0000-0001-7511-2910]
+\cormark[1]
+\fnmark[1]
+\ead{cvr_1@tug.org.in}
+\ead[url]{www.cvr.cc, cvr@sayahna.org}
+
+\credit{Conceptualization of this study, Methodology, Software}
+
+\address[1]{Elsevier B.V., Radarweg 29, 1043 NX Amsterdam, The Netherlands}
+
+\author[2,4]{Han Theh Thanh}[style=chinese]
+
+\author[2,3]{CV Rajagopal}[%
+   role=Co-ordinator,
+   suffix=Jr,
+   ]
+\fnmark[2]
+\ead{cvr3@sayahna.org}
+\ead[URL]{www.sayahna.org}
+
+\credit{Data curation, Writing - Original draft preparation}
+
+\address[2]{Sayahna Foundation, Jagathy, Trivandrum 695014, India}
+
+\author%
+[1,3]
+{Rishi T.}
+\cormark[2]
+\fnmark[1,3]
+\ead{rishi@stmdocs.in}
+\ead[URL]{www.stmdocs.in}
+
+\address[3]{STM Document Engineering Pvt Ltd., Mepukada,
+    Malayinkil, Trivandrum 695571, India}
+
+\cortext[cor1]{Corresponding author}
+\cortext[cor2]{Principal corresponding author}
+\fntext[fn1]{This is the first author footnote. but is common to third
+  author as well.}
+\fntext[fn2]{Another author footnote, this is a very long footnote and
+  it should be a really long footnote. But this footnote is not yet
+  sufficiently long enough to make two lines of footnote text.}
+
+\nonumnote{This note has no numbers. In this work we demonstrate $a_b$
+  the formation Y\_1 of a new type of polariton on the interface
+  between a cuprous oxide slab and a polystyrene micro-sphere placed
+  on the slab. The evanescent field of the resonant whispering gallery
+  mode (\WGM) of the micro sphere has a substantial gradient, and
+  therefore effectively couples with the quadrupole $1S$ excitons in
+  cuprous oxide.
+  \lipsum[1]
+  }
+
+\begin{abstract}[S U M M A R Y]
+This template helps you to create a properly formatted \LaTeX\ manuscript.
+
+\noindent\texttt{\textbackslash begin{abstract}} \dots 
+\texttt{\textbackslash end{abstract}} and
+\verb+\begin{keyword}+ \verb+...+ \verb+\end{keyword}+ 
+which
+contain the abstract and keywords respectively. 
+Each keyword shall be separated by a \verb+\sep+ command.
+\end{abstract}
+\begin{keywords}
+quadrupole exciton \sep polariton \sep \WGM \sep \BEC
+\end{keywords}
+
+
+\maketitle
+
+
+\section{Introduction}
+
+The Elsevier cas-sc class is based on the
+standard article class and supports almost all of the functionality of
+that class. In addition, it features commands and options to format the
+\begin{itemize} \item document style \item baselineskip \item front
+matter \item keywords and MSC codes \item theorems, definitions and
+proofs \item lables of enumerations \item citation style and labeling.
+\end{itemize}
+
+This class depends on the following packages
+for its proper functioning:
+
+\begin{enumerate}
+\itemsep=0pt
+%*%
+%\item \file{pifont.sty} for openstar in the title footnotes;
+\item {natbib.sty} for citation processing;
+\item {geometry.sty} for margin settings;
+\item {fleqn.clo} for left aligned equations;
+\item {graphicx.sty} for graphics inclusion;
+\item {hyperref.sty} optional packages if hyperlinking is
+  required in the document;
+\end{enumerate}  
+
+All the above packages are part of any
+standard \LaTeX{} installation.
+Therefore, the users need not be
+bothered about downloading any extra packages.
+
+\section{Installation}
+%\hypertarget{installation}{}
+
+The package is available at author resources page at Elsevier
+(\url{http://www.elsevier.com/locate/latex}).
+The class may be moved or copied to a place, usually,
+\verb+$TEXMF/tex/latex/elsevier/+, %$%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+or a folder which will be read                   
+by \LaTeX{} during document compilation.  The \TeX{} file
+database needs updation after moving/copying class file.  Usually,
+we use commands like \verb+mktexlsr+ or \verb+texhash+ depending
+upon the distribution and operating system.
+
+\section{Front matter}
+
+The author names and affiliations could be formatted in two ways:
+\begin{enumerate}[(1)]
+\item Group the authors per affiliation.
+\item Use footnotes to indicate the affiliations.
+\end{enumerate}
+See the front matter of this document for examples. 
+You are recommended to conform your choice to the journal you 
+are submitting to.
+
+\section{Bibliography styles}
+
+There are various bibliography styles available. You can select the
+style of your choice in the preamble of this document. These styles are
+Elsevier styles based on standard styles like Harvard and Vancouver.
+Please use Bib\TeX\ to generate your bibliography and include DOIs
+whenever available.
+
+Here are two sample references: 
+\cite{XUDONG:1999}
+\cite{XUDONG:1999,FAN:1999}
+\cite{XUDONG:1999,MIYAZAKI:2000}
+
+\section{Floats}
+{Figures} may be included using the command, \verb+\includegraphics+ in
+combination with or without its several options to further control
+graphic. \verb+\includegraphics+ is provided by {graphic[s,x].sty}
+which is part of any standard \LaTeX{} distribution.
+{graphicx.sty} is loaded by default. \LaTeX{} accepts figures in
+the postscript format while pdf\LaTeX{} accepts {*.pdf},
+{*.mps} (metapost), {*.jpg} and {*.png} formats. 
+pdf\LaTeX{} does not accept graphic files in the postscript format. 
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=.75]{Fig1.pdf}
+	\caption{The evanescent light - $1S$ quadrupole coupling
+	($g_{1,l}$) scaled to the bulk exciton-photon coupling
+	($g_{1,2}$). The size parameter $kr_{0}$ is denoted as $x$ and
+	the \PMS is placed directly on the cuprous oxide sample ($\delta
+	r=0$, See also Table \protect\ref{tbl1}).}
+	\label{FIG:1}
+\end{figure}
+
+
+The \verb+table+ environment is handy for marking up tabular
+material. If users want to use {multirow.sty},
+{array.sty}, etc., to fine control/enhance the tables, they
+are welcome to load any package of their choice and
+{cas-sc.cls} will work in combination with all loaded
+packages.
+
+\begin{table}[width=.9\linewidth,cols=4,pos=h]
+\caption{This is a test caption. This is a test caption. This is a test
+caption. This is a test caption.}\label{tbl1}
+\begin{tabular*}{\tblwidth}{@{} LLLL@{} }
+\toprule
+Col 1 & Col 2 & Col 3 & Col4\\
+\midrule
+12345 & 12345 & 123 & 12345 \\
+12345 & 12345 & 123 & 12345 \\
+12345 & 12345 & 123 & 12345 \\
+12345 & 12345 & 123 & 12345 \\
+12345 & 12345 & 123 & 12345 \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\section[Theorem and ...]{Theorem and theorem like environments}
+
+{cas-sc.cls} provides a few shortcuts to format theorems and
+theorem-like environments with ease. In all commands the options that
+are used with the \verb+\newtheorem+ command will work exactly in the same
+manner. {cas-sc.cls} provides three commands to format theorem or
+theorem-like environments: 
+
+\begin{verbatim}
+ \newtheorem{theorem}{Theorem}
+ \newtheorem{lemma}[theorem]{Lemma}
+ \newdefinition{rmk}{Remark}
+ \newproof{pf}{Proof}
+ \newproof{pot}{Proof of Theorem \ref{thm2}}
+\end{verbatim}
+
+
+The \verb+\newtheorem+ command formats a
+theorem in \LaTeX's default style with italicized font, bold font
+for theorem heading and theorem number at the right hand side of the
+theorem heading.  It also optionally accepts an argument which
+will be printed as an extra heading in parentheses. 
+
+\begin{verbatim}
+  \begin{theorem} 
+   For system (8), consensus can be achieved with 
+   $\|T_{\omega z}$ ...
+     \begin{eqnarray}\label{10}
+     ....
+     \end{eqnarray}
+  \end{theorem}
+\end{verbatim}  
+
+\newtheorem{theorem}{Theorem}
+
+\begin{theorem}
+For system (8), consensus can be achieved with 
+$\|T_{\omega z}$ ...
+\begin{eqnarray}\label{10}
+....
+\end{eqnarray}
+\end{theorem}
+
+The \verb+\newdefinition+ command is the same in
+all respects as its \verb+\newtheorem+ counterpart except that
+the font shape is roman instead of italic.  Both
+\verb+\newdefinition+ and \verb+\newtheorem+ commands
+automatically define counters for the environments defined.
+
+The \verb+\newproof+ command defines proof environments with
+upright font shape.  No counters are defined. 
+
+
+\section[Enumerated ...]{Enumerated and Itemized Lists}
+{cas-sc.cls} provides an extended list processing macros
+which makes the usage a bit more user friendly than the default
+\LaTeX{} list macros.   With an optional argument to the
+\verb+\begin{enumerate}+ command, you can change the list counter
+type and its attributes.
+
+\begin{verbatim}
+ \begin{enumerate}[1.]
+ \item The enumerate environment starts with an optional
+   argument `1.', so that the item counter will be suffixed
+   by a period.
+ \item You can use `a)' for alphabetical counter and '(i)' for
+   roman counter.
+  \begin{enumerate}[a)]
+    \item Another level of list with alphabetical counter.
+    \item One more item before we start another.
+\end{verbatim}
+
+Further, the enhanced list environment allows one to prefix a
+string like `step' to all the item numbers.  
+
+%\pagebreak
+\begin{verbatim}
+ \begin{enumerate}[Step 1.]
+  \item This is the first step of the example list.
+  \item Obviously this is the second step.
+  \item The final step to wind up this example.
+ \end{enumerate}
+\end{verbatim}
+
+\section{Cross-references}
+In electronic publications, articles may be internally
+hyperlinked. Hyperlinks are generated from proper
+cross-references in the article.  For example, the words
+\textcolor{black!80}{Fig.~1} will never be more than simple text,
+whereas the proper cross-reference \verb+\ref{tiger}+ may be
+turned into a hyperlink to the figure itself:
+\textcolor{blue}{Fig.~1}.  In the same way,
+the words \textcolor{blue}{Ref.~[1]} will fail to turn into a
+hyperlink; the proper cross-reference is \verb+\cite{Knuth96}+.
+Cross-referencing is possible in \LaTeX{} for sections,
+subsections, formulae, figures, tables, and literature
+references.
+
+\section{Bibliography}
+
+Three bibliographic style files (\verb+*.bst+) are provided ---
+{elsarticle-num-names.bst} and
+{elsarticle-harv.bst} --- the first one can be used for the
+numbered scheme. This can also be used for the numbered with new
+options of {natbib.sty}. The second one is for the author year
+scheme.
+
+\verb+thebibliography+ environment.  Each reference is a
+\verb+\bibitem+ and each \verb+\bibitem+ is identified by a label,
+by which it can be cited in the text:
+
+\verb+\bibitem[Elson et al.(1996)]{ESG96}+ is cited as
+\verb+\citet{ESG96}+. 
+
+\noindent In connection with cross-referencing and
+possible future hyperlinking it is not a good idea to collect
+more that one literature item in one \verb+\bibitem+.  The
+so-called Harvard or author-year style of referencing is enabled
+by the \LaTeX{} package {natbib}. With this package the
+literature can be cited as follows:
+
+
+\begin{enumerate}[\textbullet]
+\item Parenthetical: \verb+\citep{WB96}+ produces (Wettig \& Brown, 1996).
+\item Textual: \verb+\citet{ESG96}+ produces Elson et al. (1996).
+\item An affix and part of a reference:
+\verb+\citep[e.g.][Ch. 2]{Gea97}+ produces (e.g. Governato et
+al., 1997, Ch. 2).
+\end{enumerate}
+
+In the numbered scheme of citation, \verb+\cite{<label>}+ is used,
+since \verb+\citep+ or \verb+\citet+ has no relevance in the numbered
+scheme.  {natbib} package is loaded by {cas-sc} with
+\verb+numbers+ as default option.  You can change this to author-year
+or harvard scheme by adding option \verb+authoryear+ in the class
+loading command.  If you want to use more options of the {natbib}
+package, you can do so with the \verb+\biboptions+ command.  For
+details of various options of the {natbib} package, please take a
+look at the {natbib} documentation, which is part of any standard
+\LaTeX{} installation.
+
+\appendix
+\section{My Appendix}
+Appendix sections are coded under \verb+\appendix+.
+
+\verb+\printcredits+ command is used after appendix sections to list 
+author credit taxonomy contribution roles tagged using \verb+\credit+ 
+in frontmatter.
+
+\printcredits
+
+\footnotesize
+\begin{thebibliography}{17}
+\itemsep0pt
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname bibnamefont\endcsname\relax
+ \def\bibnamefont#1{#1}\fi
+\expandafter\ifx\csname bibfnamefont\endcsname\relax
+ \def\bibfnamefont#1{#1}\fi
+\expandafter\ifx\csname citenamefont\endcsname\relax
+ \def\citenamefont#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+ \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{\citenamefont{Kavoulakis and Baym}(1996)}]{KAVOULAKIS:1996}
+\bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Kavoulakis}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Baym}},
+  \bibinfo{journal}{Phys. Rev. B} \textbf{\bibinfo{volume}{53}},
+  \bibinfo{pages}{7227} (\bibinfo{year}{1996}).
+
+\bibitem[{\citenamefont{Roslyak and Birman}(2007)}]{ROSLYAK:2007}
+\bibinfo{author}{\bibfnamefont{O.}~\bibnamefont{Roslyak}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Birman}},
+  \bibinfo{journal}{arXiv:cond-mat/0703650, PRB to be published}
+  (\bibinfo{year}{2007}).
+
+\bibitem[{\citenamefont{Frohlich et~al.}(2005)\citenamefont{Frohlich, Dasbach,
+  Hogersthal, Bayer, Kliebera, Sutera, and Stolzb}}]{FROHLICH:2005}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Frohlich}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Dasbach}},
+  \bibinfo{author}{\bibfnamefont{G.~B.} \bibnamefont{Hogersthal}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Bayer}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Kliebera}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Sutera}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Stolzb}},
+  \bibinfo{journal}{Solid State Communications} \textbf{\bibinfo{volume}{134}},
+  \bibinfo{pages}{139} (\bibinfo{year}{2005}).
+
+\bibitem[{\citenamefont{Ell et~al.}(1998)\citenamefont{Ell, Ivanov, and
+  Haug}}]{ELL:1998}
+\bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Ell}},
+  \bibinfo{author}{\bibfnamefont{A.~L.} \bibnamefont{Ivanov}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Haug}},
+  \bibinfo{journal}{Phys. Rev. B} \textbf{\bibinfo{volume}{57}},
+  \bibinfo{pages}{9663} (\bibinfo{year}{1998}).
+
+\bibitem[{\citenamefont{Snoke}(2002)}]{SNOKE:2002}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Snoke}},
+  \bibinfo{journal}{Science} \textbf{\bibinfo{volume}{298}},
+  \bibinfo{pages}{1368} (\bibinfo{year}{2002}).
+
+\bibitem[{\citenamefont{Kasprzak et~al.}(2006)\citenamefont{Kasprzak, Richard,
+  Kundermann, Baas, Jeambrun, Keeling, Marchetti, Szymanska, Andre, Staehli
+  et~al.}}]{KASPRZAK:2006}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Kasprzak}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Richard}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Kundermann}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Baas}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Jeambrun}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Keeling}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Marchetti}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Szymanska}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Andre}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Staehli}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Nature}
+  \textbf{\bibinfo{volume}{443}}, \bibinfo{pages}{409} (\bibinfo{year}{2006}).
+
+\bibitem[{\citenamefont{Xudong~Fan}(1999)}]{XUDONG:1999}
+\bibinfo{author}{\bibfnamefont{H.~W.} \bibnamefont{Xudong~Fan},
+  \bibfnamefont{Scott~Lacey}}, \bibinfo{journal}{Optics Letters}
+  \textbf{\bibinfo{volume}{24}}, \bibinfo{pages}{771} (\bibinfo{year}{1999}).
+
+\bibitem[{\citenamefont{Fan et~al.}(1999)\citenamefont{Fan, Lacey, and
+  Wang}}]{FAN:1999}
+\bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{Fan}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Lacey}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Wang}},
+  \bibinfo{journal}{Opt. Lett} \textbf{\bibinfo{volume}{24}},
+  \bibinfo{pages}{771} (\bibinfo{year}{1999}).
+
+\bibitem[{\citenamefont{Miyazaki and Jimba}(2000)}]{MIYAZAKI:2000}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Miyazaki}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Jimba}},
+  \bibinfo{journal}{Phys. Rev. B} \textbf{\bibinfo{volume}{62}},
+  \bibinfo{pages}{7976} (\bibinfo{year}{2000}).
+
+\bibitem[{\citenamefont{Bohren and Huffman}(1983)}]{BOHREN:1983}
+\bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Bohren}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Huffman}},
+  \emph{\bibinfo{title}{{Absorption and scattering of light by small
+  particles}}} (\bibinfo{publisher}{Wiley New York}, \bibinfo{year}{1983}).
+
+\bibitem[{\citenamefont{Stein}(1961)}]{STEIN:1961}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Stein}}, \bibinfo{journal}{{Q.
+  appl.} Math} \textbf{\bibinfo{volume}{19}}, \bibinfo{pages}{15}
+  (\bibinfo{year}{1961}).
+
+\bibitem[{\citenamefont{Fuller}(1991)}]{FULLER:1991}
+\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Fuller}},
+  \bibinfo{journal}{Appl. Opt} \textbf{\bibinfo{volume}{30}},
+  \bibinfo{pages}{4716} (\bibinfo{year}{1991}).
+
+\bibitem[{\citenamefont{Carmichael}(1986)}]{CARMICHAEL:1986}
+\bibinfo{author}{\bibfnamefont{H.~J.} \bibnamefont{Carmichael}},
+  \bibinfo{journal}{Phys. Rev. A} \textbf{\bibinfo{volume}{33}},
+  \bibinfo{pages}{3262} (\bibinfo{year}{1986}).
+
+\bibitem[{\citenamefont{Hara et~al.}(2005)\citenamefont{Hara, Mukaiyama,
+  Takeda, and Kuwata-Gonokami}}]{HARA:2005}
+\bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Hara}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Mukaiyama}},
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Takeda}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Kuwata-Gonokami}},
+  \bibinfo{journal}{Physical Review Letters} \textbf{\bibinfo{volume}{94}},
+  \bibinfo{pages}{203905} (\bibinfo{year}{2005}).
+
+\bibitem[{\citenamefont{Deych and Roslyak}(2006)}]{DEYCH:2006}
+\bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Deych}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Roslyak}},
+  \bibinfo{journal}{Physical Review E} \textbf{\bibinfo{volume}{73}},
+  \bibinfo{pages}{36606} (\bibinfo{year}{2006}).
+
+\bibitem[{\citenamefont{Peter et~al.}(2005)\citenamefont{Peter, Senellart,
+  Martrou, Lema{\^\i}tre, Hours, G{\'e}rard, and Bloch}}]{PETER:2005}
+\bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{Peter}},
+  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Senellart}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Martrou}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Lema{\^\i}tre}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Hours}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{G{\'e}rard}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Bloch}},
+  \bibinfo{journal}{Physical Review Letters} \textbf{\bibinfo{volume}{95}},
+  \bibinfo{pages}{67401} (\bibinfo{year}{2005}).
+
+\bibitem[{\citenamefont{Leggett}(2008)}]{LEGGETT:2001}
+\bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{Leggett}},
+  \bibinfo{journal}{Rev. Mod. Phys.} \textbf{\bibinfo{volume}{73}},
+  \bibinfo{pages}{307} (\bibinfo{year}{2001}).
+
+\end{thebibliography}
+
+\vskip12pt
+
+\bio{}
+Author biography without author photo.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+\endbio
+
+\bio{pic1}
+Author biography with author photo.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+\endbio
+
+\bio{pic1}
+Author biography with author photo.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+Author biography. Author biography. Author biography.
+\endbio
+
+
+\makeatletter
+
+\def\pct{\expandafter\@gobble\string\%}
+
+\immediate\write\@auxout{\pct\space This is a test line.\pct }
+
+\end{document}
+

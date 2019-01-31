@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: cas-dc-test.aux
+The style file: elsarticle-harv.bst
+Database file #1: ref.bib.bib
+Warning--I didn't find a database entry for "XUDONG:1999"
+Warning--I didn't find a database entry for "FAN:1999"
+Warning--I didn't find a database entry for "MIYAZAKI:2000"
+Too many commas in name 1 of "G.M. Nguegnang , M. Garuti, M. Atemkeng, T. Ansah-Narh, J. Mulongo" for entry maxime2018
+while executing---line 1438 of file elsarticle-harv.bst
+Too many commas in name 1 of "G.M. Nguegnang , M. Garuti, M. Atemkeng, T. Ansah-Narh, J. Mulongo" for entry maxime2018
+while executing---line 1438 of file elsarticle-harv.bst
+Too many commas in name 1 of "G.M. Nguegnang , M. Garuti, M. Atemkeng, T. Ansah-Narh, J. Mulongo" for entry maxime2018
+while executing---line 1438 of file elsarticle-harv.bst
+Too many commas in name 1 of "G.M. Nguegnang , M. Garuti, M. Atemkeng, T. Ansah-Narh, J. Mulongo" for entry maxime2018
+while executing---line 1438 of file elsarticle-harv.bst
+Warning--can't use both volume and number fields in friedman2001elements
+Too many commas in name 1 of "G.M. Nguegnang , M. Garuti, M. Atemkeng, T. Ansah-Narh, J. Mulongo" for entry maxime2018
+while executing---line 1527 of file elsarticle-harv.bst
+Too many commas in name 1 of "G.M. Nguegnang , M. Garuti, M. Atemkeng, T. Ansah-Narh, J. Mulongo" for entry maxime2018
+while executing---line 1527 of file elsarticle-harv.bst
+Too many commas in name 1 of "G.M. Nguegnang , M. Garuti, M. Atemkeng, T. Ansah-Narh, J. Mulongo" for entry maxime2018
+while executing---line 1527 of file elsarticle-harv.bst
+Too many commas in name 1 of "G.M. Nguegnang , M. Garuti, M. Atemkeng, T. Ansah-Narh, J. Mulongo" for entry maxime2018
+while executing---line 1527 of file elsarticle-harv.bst
+Warning--empty booktitle in maxime2018
+Warning--empty pages in maxime2018
+You've used 15 entries,
+            2821 wiz_defined-function locations,
+            726 strings with 7209 characters,
+and the built_in function-call counts, 7201 in all, are:
+= -- 730
+> -- 329
+< -- 13
++ -- 131
+- -- 108
+* -- 570
+:= -- 1264
+add.period$ -- 49
+call.type$ -- 15
+change.case$ -- 111
+chr.to.int$ -- 15
+cite$ -- 18
+duplicate$ -- 301
+empty$ -- 543
+format.name$ -- 155
+if$ -- 1500
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 21
+newline$ -- 52
+num.names$ -- 60
+pop$ -- 141
+preamble$ -- 1
+purify$ -- 96
+quote$ -- 0
+skip$ -- 239
+stack$ -- 0
+substring$ -- 328
+swap$ -- 57
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 117
+warning$ -- 3
+while$ -- 61
+width$ -- 0
+write$ -- 167
+(There were 8 error messages)
